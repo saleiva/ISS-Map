@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mapping 1.1M photos taken by the ISS over 12 years.</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="css/makeitresponsive.css">
+    <link rel="stylesheet" href="css/light-theme.css">
+    <script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12 context subheader">
+        <p>Map created by <a href="http://cartodb.com">CartoDB</a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12">
+        <h1>Mapping 1.1M photos taken by the ISS.</h1>
+        <p>The <a href="http://en.wikipedia.org/wiki/ISS#Astrophotography">International Space Station (ISS)</a> is a habitable artificial satellite in low Earth orbit. It can often be seen at the appropriate time with the naked eye from Earth. The ISS serves as a microgravity and space environment research laboratory in which crew members conduct experiments in biology, human biology, physics, astronomy, meteorology and other fields. The station has been continuously occupied for 12 years and 167 days, having exceeded the previous record of almost 10 years (or 3,634 days) held by Mir, in 2010. During all this time, more than a Million of photos of Earth have been taken, and that is what we wanted to show you on the map below.</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="map" id="map"></div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Proccess</h3>
+      </div>
+      <div class="col span12">
+        <p>Nathan Bergey <a href="http://twitter.com/natronics">(@natronics)</a> crawled the NASA's servers and <a href="http://natronics.github.io/ISS-photo-locations/">pulled down</a> the location for each of the 1,129,177 photos. With the data he created a visualization based on the amount of photos taken by mission, which we found just awesome. We took the CSV files from his website, join all in a single one, imported to CartoDB, and added eacth photo URL to the table. We wanted to see each photo when clicking on each of the 1.1M points. Each different mission is identified by different colors. For example missions 21 to 30 are colored in different tones of blue.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Photos by country</h3>
+      </div>
+      <div class="col span12">
+        <p>Which countries have been more photographed by the ISS during the last 12 years? Is this density of pics changing depending on the mission? What could be the motivation for the ISS's crew for taking photos of a country or another one? <br/><br/> We have performed an spatial join between the world countries dataset from Natural Earth and the ISS photo locations, and calculated the number of photos per squared kilometer. This gives us an overview of the possible objectives of the ISS station.</p>
+        <script id='cartodb-1366366840705' src='http://saleiva.cartodb.com/tables/iss_photo_locations_by_country/embed_map.js?title=false&description=false&search=false&shareable=false&cartodb_logo=true&scrollwheel=false&sql=&zoom=2&center_lat=32.10118973232094&center_lon=7.03125&height=340&id=cartodb-1366366840705'></script>
+        <p style='margin-top:20px;'>One of the lighly surprising things we found, is that, apart from Middle East, Germany, Argentina an Chile are the most photographed countries.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Extra Ball</h3>
+      </div>
+      <div class="col span12">
+        <p>During the proccess, and thanks to Nathan's blogpost we discovered this awesome shorth film dedicated to Dr. Don Pettit. With "Making the invisible visible" you can revive part of the experience of being onboard of the ISS.
+        <iframe src="http://player.vimeo.com/video/61083440?byline=0&amp;portrait=0" width="100%" height="366" style="margin-top:20px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Sources and resources</h3>
+      </div>
+      <div class="col span12">
+        <p>ISS photo locations CSV files <a href="http://natronics.github.io/ISS-photo-locations/">at natronics</a>. <br/><a href="http://eol.jsc.nasa.gov/">Photo archive</a> at The Gateway to Astronaut Photography of Earth. <br/><a href="http://en.wikipedia.org/wiki/ISS#Astrophotography">ISS page</a> at Wikipedia</p>.<br/><a href="http://cartodb.github.com/cartodb-publishing-templates/dist/editorial.zip">Editorial publishing template</a> by CartoDB.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col span4 empty"><p></p></div>
+      <div class="col span12 context footer">
+        <p>Create your maps with ease using <a href="http://cartodb.com">CartoDB</a></p></p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      cartodb.createVis('map', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 3});
+    </script>
+
+  </body>
+</html>
