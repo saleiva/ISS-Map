@@ -92,7 +92,16 @@
     </div>
 
     <script type="text/javascript">
-      cartodb.createVis('map', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 3,center_lat: 0.581920900545844, center_lon: -27.7734375});
+      cartodb.createVis('map', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 3,center_lat: 0.581920900545844, center_lon: -27.7734375})
+      .done(function(vis,layers){
+           var _base = L.tileLayer("http://0.tiles.cartocdn.com/osm2/tiles/bm_dark_lowres/{z}/{x}/{y}.png?sql=SELECT%20the_geom%2Cthe_geom_webmercator%2Clayer_name%2Clabel%2C0%20as%20textsize%20FROM%20bm_dark_lowres%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'country_borders'%20AS%20layer_name%2Clabel%2Ctextsize%20FROM%20bm_ne_10m_admin_0_countries%20ORDER%20BY%20draworder%20DESC)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'glaciated_areas'%20AS%20layer_name%2Cnull%20as%20label%2C1%20as%20textsize%20FROM%20bm_ne_10m_glaciated_areas)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'sea_floor'%20AS%20layer_name%2Cnull%20as%20label%2C1%20as%20textsize%20FROM%20bm_ne_10m_bathymetry_g_4000)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'urban_areas'%20AS%20layer_name%2Cnull%20as%20label%2C1%20as%20textsize%20FROM%20bm_ne_10m_urban_areas%20ORDER%20BY%20draworder%20ASC)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'major_roads'%20AS%20layer_name%2Clabel%2Cdraworder%20as%20textsize%20FROM%20bm_ne_10m_roads%20ORDER%20BY%20draworder%20ASC)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'detailed_roads'%20AS%20layer_name%2Clabel%2Cdraworder%20as%20textsize%20FROM%20bm_london_roads_test%20ORDER%20BY%20draworder%20DESC)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'water_objects'%20AS%20layer_name%2Cnull%20as%20label%2C1%20as%20textsize%20FROM%20bm_ne_10m_lakes)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'admin1_borders'%20AS%20layer_name%2Clabel%2C1%20as%20textsize%20FROM%20bm_ne_10m_admin_1_states_provinces_shp%20ORDER%20BY%20draworder%20ASC)%0AUNION%20ALL%0A(SELECT%20the_geom%2Cthe_geom_webmercator%2C'populated_places'%20AS%20layer_name%2Clabel%2Ctextsize%20FROM%20bm_ne_10m_populated_places%20ORDER%20BY%20draworder%20ASC)&cache_policy=persist&cache_buster=2013-04-03T02%3A58%3A52%2B02%3A00",{
+        attribution: 'CartoDB'
+        }).addTo(vis.getNativeMap());
+          _base.setZIndex(0);
+          layers[1].setZIndex(1);
+          vis.getNativeMap()._layersMaxZoom = 7;
+          vis.getNativeMap()._layersMinZoom = 2;
+      });
 
       // var t;
       // var i = 0;
