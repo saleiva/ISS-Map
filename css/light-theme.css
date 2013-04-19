@@ -11,4 +11,5 @@ a:hover{text-decoration: underline;}
 .subheader{border-bottom: 1px solid #ddd;}
 .footer{border-top: 1px solid #ddd; margin-top: 20px;}
 .map{background-color:#eee; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; height: 440px; margin: 10px 0 25px 0;}
+.map2{background-color:#eee; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; height: 330px; margin: 10px 0 25px 0;}
 .titleBlock{text-align: right;}

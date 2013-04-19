@@ -55,6 +55,16 @@
       </div>
     </div>
 
+    <!--<div class="row">
+      <div class="col span4 titleBlock">
+        <h3>Mission by Mission</h3>
+      </div>
+      <div class="col span12">
+        <p>One of the things that Nathan do is to visualize the amount of photos taken during each mission. We loved the idea so we created this simple animated map.</p>
+        <div class="map2" id="map2"></div>
+      </div>
+    </div>-->
+
     <div class="row">
       <div class="col span4 titleBlock">
         <h3>Extra Ball</h3>
@@ -64,7 +74,7 @@
         <p>During the proccess, and thanks to Nathan's blogpost we discovered this awesome shorth film dedicated to Dr. Don Pettit. With "Making the invisible visible" you can revive part of the experience of being onboard of the ISS.
       </div>
     </div>
-
+    
     <div class="row">
       <div class="col span4 titleBlock">
         <h3>Sources and resources</h3>
@@ -82,7 +92,21 @@
     </div>
 
     <script type="text/javascript">
-      cartodb.createVis('map', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 3});
+      cartodb.createVis('map', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 3,center_lat: 0.581920900545844, center_lon: -27.7734375});
+
+      // var t;
+      // var i = 0;
+
+      // cartodb.createVis('map2', 'http://saleiva.cartodb.com/api/v1/viz/iss_photo_locations/viz.json',{zoom: 2, center_lat: 0.581920900545844, center_lon: -27.7734375})
+      // .done(function(vis,layers){
+      //   t = setInterval(function(){changeMap()},3500)
+      //   function changeMap(){
+      //     i = (parseInt(i)+1).toString();
+      //     i = (i<10) ? '0'+i : i;
+      //     i = (i==31) ? '01' : i;
+      //     layers[1].setQuery("SELECT cartodb_id, the_geom_webmercator, iss_mission FROM iss_photo_locations WHERE iss_mission = 'ISS0"+i+"'");
+      //   }
+      //});      
     </script>
 
   </body>
