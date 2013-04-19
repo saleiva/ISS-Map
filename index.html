@@ -40,7 +40,7 @@
         <h3>Proccess</h3>
       </div>
       <div class="col span12">
-        <p>Nathan Bergey <a href="http://twitter.com/natronics">(@natronics)</a> crawled the NASA's servers and <a href="http://natronics.github.io/ISS-photo-locations/">pulled down</a> the location for each of the 1,129,177 photos. With the data he created a visualization based on the amount of photos taken by mission, which we found just awesome. We took the CSV files from his website, join all in a single one, imported to CartoDB, and added eacth photo URL to the table. We wanted to see each photo when clicking on each of the 1.1M points. Each different mission is identified by different colors. For example missions 21 to 30 are colored in different tones of blue.</p>
+        <p>Nathan Bergey <a href="http://twitter.com/natronics">(@natronics)</a> crawled the NASA's servers and <a href="http://natronics.github.io/ISS-photo-locations/">pulled down</a> the location for each of the 1,129,177 photos. With the data, he created a visualization based on the amount of photos taken by missions through the ISS history; we found his work just awesome. We took the CSV files from his website and imported them into CartoDB. For each photo in the CartoDB table, we added a photo URL. We wanted to create a map where clicking on any of the 1.1M points would show you the exact image taken at that moment. Each different mission is identified by different colors. For example missions 21 to 30 are colored in different tones of blue.</p>
       </div>
     </div>
 
@@ -49,9 +49,9 @@
         <h3>Photos by country</h3>
       </div>
       <div class="col span12">
-        <p>Which countries have been more photographed by the ISS during the last 12 years? Is this density of pics changing depending on the mission? What could be the motivation for the ISS's crew for taking photos of a country or another one? <br/><br/> We have performed an spatial join between the world countries dataset from Natural Earth and the ISS photo locations, and calculated the number of photos per squared kilometer. This gives us an overview of the possible objectives of the ISS station.</p>
+        <p>Looking at the data in this way got our minds thinking of a lot of new questions about the ISS missions. Which countries have been more photographed by the ISS during the last 12 years? Is this density of pics changing depending on the mission? What could be the motivation for the ISS's crew for taking photos of one country versus another one? <br/><br/> We have performed a spatial join between the world countries dataset from Natural Earth and the ISS photo locations, and normalized by the number of photos per squared kilometer. This gives us a peek into what the focus of ISS crew members or missions have been through time.</p>
         <script id='cartodb-1366366840705' src='http://saleiva.cartodb.com/tables/iss_photo_locations_by_country/embed_map.js?title=false&description=false&search=false&shareable=false&cartodb_logo=true&scrollwheel=false&sql=&zoom=2&center_lat=32.10118973232094&center_lon=7.03125&height=340&id=cartodb-1366366840705'></script>
-        <p style='margin-top:20px;'>One of the lighly surprising things we found, is that, apart from Middle East, Germany, Argentina an Chile are the most photographed countries.
+        <p style='margin-top:20px;'>One surprising thing we found is that, apart from Middle East, Germany, Argentina an Chile are the most photographed countries.
       </div>
     </div>
 
@@ -71,7 +71,7 @@
       </div>
       <div class="col span12">
         <iframe src="http://player.vimeo.com/video/61083440?byline=0&amp;portrait=0" width="100%" height="366" style="margin-bottom:10px; margin-top:10px;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        <p>During the proccess, and thanks to Nathan's blogpost we discovered this awesome shorth film dedicated to Dr. Don Pettit. With "Making the invisible visible" you can revive part of the experience of being onboard of the ISS.
+        <p>Thanks to Nathan's blogpost we discovered this awesome shorth film dedicated to Dr. Don Pettit. With "Making the invisible visible" you can relive part of the experience of being onboard of the ISS.
       </div>
     </div>
     
